@@ -27,3 +27,36 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
 ### Configurar o Kinesis Data Stream
 
 - Kinesis Dashboard -> Create new delivery stream
+  - Source -> Direct PUT
+  - Destination -> Amazon Elasticsearch Service
+  - Delivery stream name -> [DIOLiveStream]
+  - Transform records -> Enabled -> Create function -> Blueprint Apache Log to JSON -> Use blueprint
+  - Table name parameter -> weblogs
+  - Deploy
+  - OBS: utiliza o Cloudformation
+  - Atualizar o timeout da função lambda para 1 minuto
+- Destination
+  - Elasticsearch domain (aguardar o processamento do domínio)
+  - Index -> weblogs
+  - Rotation -> Every day
+- S3 Backup
+  - Create new bucket
+
+### Configurar delivery stream no EC2
+
+- ```sudo nano /etc/aws-kinesis/agent.json```
+- ```sudo service aws-kinesis-agent restart```
+- ```tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log```
+
+### Elasticsearch
+
+- Indices
+- Overview -> Link to Kibana
+- Acessar o Kibana
+  - Manage -> Index patterns -> Create index pattern [weblogs*] -> Time field [@timestamp]
+  - Pesquisar dados
+    - Discover -> configurar datas para 2019 - date absolute 27/02/2019 02/02/201
+    - Visualization -> New -> Vertical bar -> Filter [Response code 500 is] 
+    - Bucket -> Aggregation Date Histogram -> Field @timestamp -> Minimum interval Hour -> Update
+
+### Limpar recursos
