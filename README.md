@@ -56,7 +56,7 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
 - Acessar o Kibana
   - Manage -> Index patterns -> Create index pattern [weblogs*] -> Time field [@timestamp]
   - Pesquisar dados
-    - Discover -> configurar datas para 2019 - date absolute 27/02/2019 02/02/201
+    - Discover -> configurar datas para 2019 - date absolute 27/01/2019 02/02/2019
     - Visualization -> New -> Vertical bar -> Filter [Response code 500 is] 
     - Bucket -> Aggregation Date Histogram -> Field @timestamp -> Minimum interval Hour -> Update
 
