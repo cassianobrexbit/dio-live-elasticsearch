@@ -11,7 +11,7 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
 ### Iniciar instância no EC2
 - EC2 Console -> Launch instances -> Amazon Linux 2 AMI (HVM), SSD Volume Type -> t2.micro -> Review and launch -> Create a new key pair -> download da chave ssh
 - Acessar com aplicação SSH
-- Utilizar o comando ```wget``` para obter os arquivos de logs que estão no seguinte link: s3://dio-live-elasticsearch-data/httpd.zip
+- Utilizar o comando ```wget``` para obter os arquivos de logs que estão no seguinte link: https://dio-live-elasticsearch-data.s3.amazonaws.com/httpd.zip
 - Descompactar o arquivo .zip com o comando ```unzip httpd.zip```
 - Mover a pasta descompactada com o comando ```sudo mv htppd /var/log/httpd```
 
