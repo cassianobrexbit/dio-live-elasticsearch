@@ -61,3 +61,8 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
     - Bucket -> Aggregation Date Histogram -> Field @timestamp -> Minimum interval Hour -> Update
 
 ### Limpar recursos
+
+- Deletar Delivery Stream
+- Deletar domain do Elasticsearch
+- Deletar função lambda
+- Deletar bucket do S3
