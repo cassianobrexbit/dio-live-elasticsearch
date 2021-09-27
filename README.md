@@ -66,3 +66,4 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
 - Deletar domain do Elasticsearch
 - Deletar função lambda
 - Deletar bucket do S3
+- Encerrar instância no EC2
