@@ -41,7 +41,7 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
   - Rotation -> Every day
 - S3 Backup
   - Create new bucket
-- S# bucket prefix ```es/```
+- S3 bucket prefix ```es/```
 
 ### Configurar delivery stream no EC2
 
