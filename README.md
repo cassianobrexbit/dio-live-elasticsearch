@@ -46,6 +46,24 @@ Repositório de código para a live sobre o Amazon Opensearch (sucessor do Elast
 ### Configurar delivery stream no EC2
 
 - ```sudo nano /etc/aws-kinesis/agent.json```
+```
+{
+  "cloudwatch.emitMetrics": true,
+  "kinesis.endpoint": "",
+  "firehose.endpoint": "firehose.us-east-1.amazonaws.com",
+
+  "awsAccessKeyId":"",
+  "awsSecretAccessKey":"",
+
+  "flows": [
+    {
+      "filePattern": "/var/log/httpd/ssl_access*",
+      "deliveryStream": "",
+      "initialPosition": "START_OF_FILE"
+    }
+  ]
+}
+```
 - ```sudo service aws-kinesis-agent restart```
 - ```tail -f /var/log/aws-kinesis-agent/aws-kinesis-agent.log```
 
